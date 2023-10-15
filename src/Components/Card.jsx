@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import AddToCartButton from './AddToCartButton'
 const Card = ({
 	id = '0',
 	title = 'loremloremlor',
@@ -7,23 +9,22 @@ const Card = ({
 	handleElementAdd,
 }) => {
 	return (
-		<div
-			onClick={handleElementAdd}
-			className='flex flex-col justify-evenly text-slate-500 w-[250px] min-h-[250px] border-2 border-red-700 bg-[#ffffff] cursor-pointer'
-			data={id}
-		>
-			<h3 className='pointer-events-none p-3 text-lg break-words text-ellipsis overflow-hidden whitespace-nowrap'>
-				{title}
-			</h3>
-			<div className='pointer-events-none flex justify-between gap-6'>
-				<p className='pointer-events-none text-sm px-4 font-bold'>{price} $</p>
-				<p className='pointer-events-none text-sm px-4 font-bold'>
+		<div className='card'>
+			<div className='rounded-t-lg first:pointer-events-none mx-auto w-full py-6 bg-white'>
+				<img className='w-[110px] mx-auto max-w-full h-[150px] object-contain' src={image} alt='' />
+			</div>
+			<Link to={`/shop/${id}`}>
+				<h3 className='pointer-events-none px-3 mt-5 pb-2 text-lg break-words text-ellipsis overflow-hidden whitespace-nowrap'>
+					{title}
+				</h3>
+			</Link>
+			<div className='pointer-events-none flex justify-around gap-6 px-3'>
+				<p className='pointer-events-none text-base font-bold'>{price} $</p>
+				<p className='pointer-events-none text-base font-bold'>
 					{rate} <i className='fa-solid fa-star text-yellow-300'></i>
 				</p>
 			</div>
-			<div className='pointer-events-none mx-auto'>
-				<img className='w-[110px] max-w-full h-[150px] object-contain' src={image} alt='' />
-			</div>
+			<AddToCartButton className='my-4 mt-12' handleElementAdd={handleElementAdd} id={id} />
 		</div>
 	)
 }
