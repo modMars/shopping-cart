@@ -3,8 +3,8 @@ const Shop = ({ items, handleElementAdd }) => {
 	console.log(items)
 	return (
 		<>
-			<h2 className='my-8'>Shop</h2>
-			<section className='flex justify-evenly flex-wrap gap-8 my-12'>
+			<h2 className='pageHeader'>Shop</h2>
+			<section className='flex justify-evenly flex-wrap gap-8'>
 				{items &&
 					items.map(item => (
 						<Card

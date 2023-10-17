@@ -1,5 +1,6 @@
 const getCartItems = (items, cart) => {
-	return items.filter(item => item.id === cart.id)
+	const filteredItems = items.filter(item => item.id === cart.id)
+	return filteredItems
 }
 
 export { getCartItems }

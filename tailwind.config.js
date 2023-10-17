@@ -4,12 +4,13 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				fg: '#fefefe',
-				bg: '#141d30',
-				acc: '#FF95D1',
+				fg: '#CDE6F5',
+				bg: '#2D3142',
+				acc: '#F25F5C',
 			},
 			fontFamily: {
-				hero: ['Mooli', 'sans-serif'], // Define 'Mooli' as the font family
+				hero: ['Playfair Display', 'serif'],
+				regular: ['Roboto', 'sans-serif'],
 			},
 		},
 	},

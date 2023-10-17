@@ -1,27 +1,29 @@
 import { Link } from 'react-router-dom'
-import img from '../assets/landing.png'
+import bg from '../assets/bg.jpg'
+import img from '../assets/landing.webp'
 
 const Landing = () => {
 	return (
 		<>
-			<section className='landing flex flex-col justify-center items-start min-w-full min-h-[91svh]'>
+			<section className='landing flex flex-col justify-center items-start min-w-full min-h-[91svh] leading-relaxed'>
 				<div className=''>
 					{' '}
-					<h1 className=' font-hero max-w-3xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white'>
-						unveil a world of shopping delights!
+					<h1 className='text-fg drop-shadow-2xl shadow-black text-left font-hero max-w-3xl mb-4 font-extrabold tracking-wide leading-none sm:text-[5rem] md:text-[8rem] xl:text-[10rem]'>
+						DISCOVER<br></br>
+						LOVE<br></br>
+						<Link
+							to='shop'
+							className='transition-colors duration-300 underline decoration-2 decoration-wavy underline-offset-[20px] hover:text-acc'
+						>
+							BUY<br></br>
+						</Link>
 					</h1>
-					<p className='max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400'>
-						From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their
-						payment stack.
-					</p>
-					<button className='duration-200 transition-colors rounded-lg px-4 py-2 my-8 border border-fg hover:border-acc hover:text-fg'>
-						<Link to='shop'>Go to shop</Link>
-					</button>
 				</div>
 			</section>
-			<div className='-z-10 absolute w-[60rem] right-0 top-32'>
-				<img className='min-w-full' src={img} alt='' />
-			</div>
+			<div
+				className='-z-10 fixed top-0 left-0 w-screen h-screen'
+				style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', filter: 'blur(5px) brightness(0.6)' }}
+			></div>
 		</>
 	)
 }

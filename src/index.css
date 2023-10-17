@@ -4,12 +4,15 @@
 
 @layer components {
 	.card {
-		@apply flex flex-col justify-evenly text-fg w-[280px] border-2 border-slate-700 rounded-lg bg-bg;
+		@apply shadow-xl flex flex-col justify-evenly text-bg w-[280px] border-2  rounded-lg bg-fg;
+	}
+	.pageHeader {
+		@apply text-6xl font-hero px-8 mb-12;
 	}
 }
 
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	/* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 	line-height: 1.5;
 	font-weight: 400;
 	color-scheme: light dark;
@@ -19,9 +22,9 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
-	--fg: #fefefe;
-	--bg: #141d30;
-	--acc: #ff95d1;
+	--fg: #eae8ff;
+	--bg: #2d3142;
+	--acc: #b0d7ff;
 }
 
 a {
@@ -42,20 +45,18 @@ h1 {
 	line-height: 1.1;
 }
 
+h2 {
+	display: block;
+}
+
 button:focus,
 button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
 	:root {
 		color: var(--bg);
-		background-color: var(--fg);
-	}
-	a:hover {
-		color: var(--acc);
-	}
-	button {
 		background-color: var(--fg);
 	}
 }
@@ -65,7 +66,4 @@ button:focus-visible {
 		color: var(--fg);
 		background-color: var(--bg);
 	}
-	a:hover {
-		color: var(--acc);
-	}
-}
+} */
