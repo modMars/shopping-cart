@@ -1,7 +1,6 @@
 import { ToastContainer } from 'react-toastify'
 import Card from '../Components/Card'
 const Shop = ({ items, handleElementAdd }) => {
-	console.log(items)
 	return (
 		<>
 			<h2 className='pageHeader'>Shop</h2>
