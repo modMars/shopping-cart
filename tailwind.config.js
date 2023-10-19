@@ -4,9 +4,12 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				fg: '#CDE6F5',
-				bg: '#2D3142',
-				acc: '#F25F5C',
+				fg: 'var(--fg)',
+				bg: 'var(--bg)',
+				acc: 'var(--acc)',
+				darkSecondary: 'var(--darkSecondary)',
+				accSecondary: 'var(--accSecondary)',
+				fgSecondary: 'var(--fgSecondary)',
 			},
 			fontFamily: {
 				hero: ['Playfair Display', 'serif'],

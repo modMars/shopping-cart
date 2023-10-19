@@ -90,9 +90,9 @@ export default function App() {
 	return (
 		<>
 			<Navbar cartCount={cart.length}></Navbar>
-			<main className='min-h-[93svh] mx-auto max-w-screen-2xl py-8 px-12 text-bg dark:text-fg'>
+			<main className='mx-auto max-w-screen-2xl px-12 text-bg dark:text-fg'>
 				{loading ? (
-					<div>Fetching data, please wait..</div>
+					<div className='text-5xl mt-12'>Fetching data, please wait..</div>
 				) : (
 					<Routes>
 						<Route path='/' element={<Landing />} />

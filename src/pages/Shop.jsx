@@ -1,10 +1,11 @@
+import { ToastContainer } from 'react-toastify'
 import Card from '../Components/Card'
 const Shop = ({ items, handleElementAdd }) => {
 	console.log(items)
 	return (
 		<>
 			<h2 className='pageHeader'>Shop</h2>
-			<section className='flex justify-evenly flex-wrap gap-8'>
+			<section className='flex flex-wrap justify-center gap-8 mb-12'>
 				{items &&
 					items.map(item => (
 						<Card
@@ -19,6 +20,15 @@ const Shop = ({ items, handleElementAdd }) => {
 						></Card>
 					))}
 			</section>
+			<ToastContainer
+				position='bottom-center'
+				autoClose={3000}
+				hideProgressBar={true}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				theme='light'
+			/>
 		</>
 	)
 }
