@@ -80,7 +80,7 @@ button:focus-visible {
 
 .landing-bg::before {
 	content: '';
-	background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.623)), url(../src//assets/bg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.623)), url(../src//assets/bg.webp);
 	position: fixed;
 	background-attachment: scroll;
 	background-position: center;
