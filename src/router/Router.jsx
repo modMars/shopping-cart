@@ -1,28 +1,41 @@
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-// import { Routes, Route } from 'react-router-dom'
-// import App from '../App'
-// import ErrorPage from '../Components/ErrorPage'
-// import Landing from '../pages/Landing'
-// import Shop from '../pages/Shop'
-// import Cart from '../pages/Cart'
+import { Route, Routes } from 'react-router-dom'
+import ErrorPage from '../Components/ErrorPage'
+import Cart from '../pages/Cart'
+import ItemDescription from '../pages/ItemDescription'
+import Landing from '../pages/Landing'
+import Shop from '../pages/Shop'
 
-// const Router = () => {
-// 	// const router = createBrowserRouter([{ path: '/:name?', element: <App />, errorElement: <ErrorPage /> }])
+const Router = ({
+	items,
+	setItems,
+	cart,
+	total,
+	handleElementAdd,
+	handleCartAdd,
+	handleCartSubstract,
+	deleteFromCart,
+}) => {
+	return (
+		<Routes>
+			<Route path='/' element={<Landing />} />
+			<Route path='/shop' element={<Shop items={items} handleElementAdd={handleElementAdd} setItems={setItems} />} />
+			<Route path='shop/:id' element={<ItemDescription items={items} handleElementAdd={handleElementAdd} />} />
+			<Route
+				path='/cart'
+				element={
+					<Cart
+						items={items}
+						cart={cart}
+						total={total}
+						handleCartAdd={handleCartAdd}
+						handleCartSubstract={handleCartSubstract}
+						deleteFromCart={deleteFromCart}
+					/>
+				}
+			/>
+			<Route path='*' element={<ErrorPage />} />
+		</Routes>
+	)
+}
 
-// 	return (
-// 		<main className="max-w-screen w-screen font-maven-pro">
-// 			<Routes>
-// 				<Route path="/" element={<Landing />} />
-// 				<Route path="/shop" element={<Shop />}/>
-// 				<Route path="/cart" element={<Cart />} />
-// 				<Route
-// 					path="/cart"
-// 					element={Cart}
-// 				/>
-// 				<Route path="*" element={<ErrorPage />} />
-// 			</Routes>
-// 		</main>
-// 	);
-// }
-
-// export default Router
+export default Router

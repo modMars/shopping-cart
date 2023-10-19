@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import ErrorPage from './Components/ErrorPage'
 import Navbar from './Components/Navbar'
 import { fetchData } from './helpers/fetchShopItems'
-import Cart from './pages/Cart'
-import ItemDescription from './pages/ItemDescription'
-import Landing from './pages/Landing'
-import Shop from './pages/Shop'
+import Router from './router/Router'
 
 export default function App() {
 	//Will hold the fetched items
@@ -85,7 +80,6 @@ export default function App() {
 			return updatedCart
 		})
 	}
-
 	//Properly route and provide the necessary prop variables to each component.
 	return (
 		<>
@@ -94,28 +88,16 @@ export default function App() {
 				{loading ? (
 					<div className='text-5xl mt-12'>Fetching data, please wait..</div>
 				) : (
-					<Routes>
-						<Route path='/' element={<Landing />} />
-						<Route
-							path='/shop'
-							element={<Shop items={items} handleElementAdd={handleElementAdd} setItems={setItems} />}
-						/>
-						<Route path='shop/:id' element={<ItemDescription items={items} handleElementAdd={handleElementAdd} />} />
-						<Route
-							path='/cart'
-							element={
-								<Cart
-									items={items}
-									cart={cart}
-									total={total}
-									handleCartAdd={handleCartAdd}
-									handleCartSubstract={handleCartSubstract}
-									deleteFromCart={deleteFromCart}
-								/>
-							}
-						/>
-						<Route path='*' element={<ErrorPage />} />
-					</Routes>
+					<Router
+						items={items}
+						setItems={setItems}
+						cart={cart}
+						total={total}
+						handleElementAdd={handleElementAdd}
+						handleCartAdd={handleCartAdd}
+						handleCartSubstract={handleCartSubstract}
+						deleteFromCart={deleteFromCart}
+					/>
 				)}
 			</main>
 		</>
