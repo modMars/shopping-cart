@@ -5,7 +5,8 @@
 
 ## Basic Overview
 
-<strong>Spiffo's</strong> an e-commerce shopping cart
+<strong>Spiffo's</strong> is an e-commerce shopping cart web application<br>
+<strong>Click here to visit the live project -> <a href='https://modmars-shopping-cart.netlify.app/'>Shopping Cart</a></strong>
 
 ## Demo
 
